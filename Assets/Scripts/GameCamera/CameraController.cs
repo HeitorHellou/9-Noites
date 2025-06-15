@@ -37,7 +37,7 @@ namespace Assets.Scripts.GameCamera
         [SerializeField] private Transform cameraHolder;
 
         private IInputReader inputReader;
-        private PlayerState playerState;
+        private PlayerMovement playerState;
 
         private float xRotation = 0f;
         private float yRotation = 0f;
@@ -48,7 +48,7 @@ namespace Assets.Scripts.GameCamera
         private void Awake()
         {
             inputReader = GetComponentInParent<IInputReader>();
-            playerState = GetComponentInParent<PlayerState>();
+            playerState = GetComponentInParent<PlayerMovement>();
 
             originalCameraPosition = transform.localPosition;
 
@@ -91,7 +91,7 @@ namespace Assets.Scripts.GameCamera
 
         private void HandleCameraHeight()
         {
-            float targetHeight = playerState.Model.IsCrouching ? crouchingEyeHeight : standingEyeHeight;
+            float targetHeight = playerState.IsCrouching ? crouchingEyeHeight : standingEyeHeight;
 
             Vector3 currentPos = cameraHolder.localPosition;
             currentPos.y = Mathf.Lerp(currentPos.y, targetHeight, Time.deltaTime * heightTransitionSpeed);
@@ -100,7 +100,7 @@ namespace Assets.Scripts.GameCamera
 
         private void HandleHeadBob()
         {
-            if (!playerState.Model.IsGrounded)
+            if (!playerState.IsGrounded)
                 return;
 
             Vector2 moveInput = inputReader.MoveAxis;
@@ -108,7 +108,7 @@ namespace Assets.Scripts.GameCamera
 
             if (isMoving)
             {
-                float speedMultiplier = playerState.Model.IsCrouching ? 0.5f : playerState.Model.IsRunning ? 1.5f : 1f;
+                float speedMultiplier = playerState.IsCrouching ? 0.5f : playerState.IsRunning ? 1.5f : 1f;
 
                 bobTimer += Time.deltaTime * bobFrequency * speedMultiplier;
 

@@ -473,7 +473,6 @@ GameObject:
   - component: {fileID: 898229685}
   - component: {fileID: 898229688}
   - component: {fileID: 898229689}
-  - component: {fileID: 898229691}
   - component: {fileID: 898229690}
   m_Layer: 0
   m_Name: Cube (3)
@@ -599,24 +598,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9586cc152baa508429263c2e678950fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 898229688}
-  orientation: {fileID: 898229683}
+  walkSpeed: 3
+  runSpeed: 6
+  crouchSpeed: 2
+  jumpForce: 8
+  gravity: -19.62
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.2
---- !u!114 &898229691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898229682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8da70eb035f0043b549bd8b55667ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  controller: {fileID: 898229688}
+  orientation: {fileID: 898229683}
 --- !u!1 &912788943
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +621,6 @@ GameObject:
   - component: {fileID: 912788945}
   - component: {fileID: 912788948}
   - component: {fileID: 912788949}
-  - component: {fileID: 912788950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -703,24 +694,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9586cc152baa508429263c2e678950fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 912788945}
-  orientation: {fileID: 1854664063}
+  walkSpeed: 3
+  runSpeed: 6
+  crouchSpeed: 2
+  jumpForce: 8
+  gravity: -19.62
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.3
---- !u!114 &912788950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912788943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8da70eb035f0043b549bd8b55667ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  controller: {fileID: 912788945}
+  orientation: {fileID: 1854664063}
 --- !u!1 &1158661168
 GameObject:
   m_ObjectHideFlags: 0
